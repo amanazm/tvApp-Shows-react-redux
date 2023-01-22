@@ -1,38 +1,83 @@
-.App {
-  text-align: center;
+@import "react-slideshow-image/dist/styles.css";
+body {
+  margin: 70px 1vw;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.loader {
+  position: absolute;
+  top: calc(50% - 32px);
+  left: calc(50% - 32px);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  perspective: 800px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flex {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.showGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0.2vw;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.allShows {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 75vh;
+  overflow-x: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.element {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.element::-webkit-scrollbar {
+  width: 0 !important;
+}
+.allShows::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+.element1 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+img {
+  border-radius: 8px;
+}
+
+.category-title {
+  color: rgb(25, 126, 227);
+}
+.zoom {
+  transition: transform 0.3s;
+}
+
+.zoom:hover {
+  transform: scale(1.08);
+}
+
+.featured-show {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 200px;
+}
+#slide-container {
+  display: flex;
+  justify-content: space-evenly;
+  padding: auto;
+}
+#img-not-found {
+  height: 10vh;
+  width: 10vw;
 }
